@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 Pure CSS Layout Examples
 ========================
 
@@ -18,4 +18,4 @@ See the [LICENSE file][] for license text and copyright information.
 =======
 # pureweb
 hw-FinalProject
->>>>>>> 337e2e48720d794af9650cf40ad032b15cdc984f
+
