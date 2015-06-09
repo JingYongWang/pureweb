@@ -1,0 +1,231 @@
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(61, 146, 201);
+}
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+h3 {
+    font-weight: 100;
+}
+
+/* LAYOUT CSS */
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+.pure-img-responsive-myself {
+    max-width: 65%;
+    height: auto;
+    margin-top: 10px;
+    margin-right: 60px;
+
+}
+
+
+#layout {
+    padding: 0;
+}
+
+.header {
+    text-align: center;
+    top: auto;
+    margin: 3em auto;
+}
+
+.sidebar {
+<<<<<<< HEAD
+    background: rgb(140,198,101);
+=======
+    background: rgb(61, 79, 93);
+>>>>>>> b4e65f1b13c082071745c9fc2f5107851d613b16
+    color: #fff;
+}
+
+.brand-title,
+.brand-tagline {
+    margin-right: 60px;
+}
+.brand-title {
+<<<<<<< HEAD
+
+=======
+>>>>>>> b4e65f1b13c082071745c9fc2f5107851d613b16
+    text-transform: uppercase;
+}
+.brand-tagline {
+    font-weight: 300;
+    color: rgb(176, 202, 219);
+}
+
+.nav-list {
+    margin-right:7em; 
+    margin-left:1em;
+    margin-top:1em;
+    margin-bottom:1em;
+    padding: 0;
+    list-style: none;
+}
+.nav-item {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+.nav-item a {
+    background: transparent;
+    border: 2px solid rgb(176, 202, 219);
+    color: #fff;
+    margin-top: 1em;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+    font-size: 85%;
+}
+.nav-item a:hover,
+.nav-item a:focus {
+    border: 2px solid rgb(61, 146, 201);
+    text-decoration: none;
+}
+
+.content-subhead {
+    text-transform: uppercase;
+    color: #aaa;
+    border-bottom: 1px solid #eee;
+    padding: 0.4em 0;
+    font-size: 80%;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+.content-subhead-myself{
+    text-transform: uppercase;  /*uppercase定義所有字母均為大寫,capitalize定義單字的第一個字母大寫，其他字母小寫*/
+    color: #34495d;
+    border-bottom: 1px solid #D6D6D6;
+    padding: 0.4em 0;
+    font-size: 20px;
+    font-weight: 20px;
+    letter-spacing: 0.3em;
+
+}
+
+.content {
+    padding: 2em 1em 0;
+}
+
+.post {
+    padding-bottom: 2em;
+}
+.post-title {
+    font-size: 2em;
+    color: #222;
+    margin-bottom: 0.2em;
+}
+.post-avatar {
+    border-radius: 50px;
+    float: right;
+    margin-left: 1em;
+}
+.post-description {
+    font-family: Georgia, "Cambria", serif;
+    color: #444;
+    line-height: 1.8em;
+}
+.post-meta {
+    color: #999;
+    font-size: 90%;
+    margin: 0;
+}
+
+.post-category {
+    margin: 0 0.1em;
+    padding: 0.3em 1em;
+    color: #fff;
+    background: #999;
+    font-size: 80%;
+}
+    .post-category-design {
+        background: #5aba59;
+    }
+    .post-category-pure {
+        background: #4d85d1;
+    }
+    .post-category-yui {
+        background: #8156a7;
+    }
+    .post-category-js {
+        background: #df2d4f;
+    }
+    .post-category-red{
+        background: #ce1126;
+    }
+    .post-category-orang{
+        background: #F75B0C;
+    }
+    .post-category-blue{
+        background: #009bff;
+    }
+    .post-category-green{
+        background: #24B548;
+    }
+    .post-category-purple{
+        background: #FF00DD;
+    }
+     .post-category-pink{
+        background: #FFAADD;
+    }
+    .post-category-yello{
+        background: #FB9800;
+    }
+
+
+.post-images {
+    margin: 1em 0;
+}
+.post-image-meta {
+    margin-top: -3.5em;
+    margin-left: 1em;
+    color: #fff;
+    text-shadow: 0 1px 1px #333;
+}
+
+.footer {
+    text-align: center;
+    padding: 1em 0;
+}
+.footer a {
+    color: #ccc;
+    font-size: 80%;
+}
+.footer .pure-menu a:hover,
+.footer .pure-menu a:focus {
+    background: none;
+}
+
+@media (min-width: 48em) {
+    .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+    }
+
+    .header {
+<<<<<<< HEAD
+        margin: 40 % 2em 0;  /*本來80%*/
+=======
+        margin: 20% 2em 0;  /*本來80%*/
+>>>>>>> b4e65f1b13c082071745c9fc2f5107851d613b16
+        text-align: right;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+    }
+}
+
