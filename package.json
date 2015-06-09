@@ -1,0 +1,25 @@
+{
+  "name": "MessageBoards",
+  "version": "1.0.0",
+  "description": "Pure CSS Layout Examples ========================",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "co-body": "^1.1.0",
+    "co-views": "^0.3.0",
+    "koa": "^0.19.1",
+    "koa-logger": "^1.2.2",
+    "koa-route": "^2.4.1",
+    "koa-static": "^1.4.9",
+    "koa-static-cache": "^3.1.1",
+    "swig": "^1.4.2"
+  },
+  "engines": {
+    "node": ">= 0.12.2",
+    "iojs": ">= 1.8.1"
+  },
+}
