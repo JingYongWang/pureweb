@@ -1,7 +1,8 @@
 var koa = require('koa');
 var app = koa();
-var crouter = require('koa-router'); //// var crouter = require('koa-router')(),為一個函數
-//var route  = require('koa-route');
+var crouter = require('koa-router'); 
+// var crouter = require('koa-router')()
+//()為一個建構函數
 var logger = require('koa-logger');
 var router = crouter();
 //var view = require('co-view');
@@ -10,18 +11,19 @@ var router = crouter();
 app.use(router.routes())
 app.use(router.allowedMethods());
 
-//app.use(router(app));
+
 router.get('/', function *(next){ 
 	this.body = 'Hello World';
 });
 
-/*
-app.use(route.get('/', function *(){
+router.get('/web/song.html', function *(next){ 
+	
+});
 
-	this.body = 'Test';
 
-}));
-*/
+
+
+
 app.use(logger());
 
   app.listen(3100);
