@@ -1,6 +1,10 @@
 var app = require('koa')();
 var router = require('koa-router')();
-
+/*
+var crouter = require('koa-router')()
+var router = crouter();
+()為一個建構函數
+*/
 app
   .use(router.routes())
   .use(router.allowedMethods());

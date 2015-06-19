@@ -15,7 +15,7 @@
     "koa-logger": "^1.2.2",
     "koa-route": "^2.4.1",
     "koa-router": "^5.1.2",
-    "koa-static": "^1.4.9"
+    "koa-static-folder": "^0.1.5"
   },
   "engines": {
     "node": ">= 0.12.2",

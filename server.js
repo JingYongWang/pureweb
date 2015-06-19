@@ -1,31 +1,22 @@
 var koa = require('koa');
 var app = koa();
-var crouter = require('koa-router'); 
-var router = crouter();
-// var crouter = require('koa-router')()
-//()為一個建構函數
+var route = require('koa-route')
+var mount = require('koa-mount'); 
 var logger = require('koa-logger');
-var server = require('koa-static');
+var server = require('koa-static-folder');
+
+
 //var view = require('co-view');
 //var body = require('co-body');
-
-app.use(router.routes())
-app.use(router.allowedMethods());
-app.use(server(./web));
-
-router.get('/', function *(next){ 
-	this.body = 'Hello World';
-});
-
-router.get('/web/song.html', function *(next){ 
-	
-});
-
-
-
-
-
 app.use(logger());
+
+
+app.use(server('./web')); 
+
+app.use(route.get('/', function *(){
+	this.redirect('/web/pure.html');
+	
+}));
 
   app.listen(3100);
 console.log(" localhost 3100 port start");
