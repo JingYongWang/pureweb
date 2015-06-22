@@ -29,10 +29,16 @@ app.use(logger());
 app.use(bodyParser());
 
 app.use(server('./web')); 
-
+/*
 app.use(route.get('/', function *(){
 	this.redirect('/web/pure.html');
 	
+}));
+*/
+
+app.use(route.get('/', function *(){
+  this.redirect('/web/SPA.html');
+  
 }));
 
 function response(res, code, msg) {
