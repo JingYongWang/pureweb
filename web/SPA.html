@@ -39,7 +39,7 @@
                             <a class="pure-button" onclick="loginPage()">登入</a>
                             <a class="pure-button" onclick="logout()">登出</a>
                             <a class="pure-button" href="https://github.com/JingYongWang">My Github</a>
-                            <a class="pure-button"  onclick="editPage()">編輯文章</a>
+                            <a class="pure-button"  onclick="returnEdit()">編輯文章</a>
                             <a class="pure-button" onclick="home()" >個人の介紹</a>
                             <a class="pure-button" onclick="songPage()" >個人の影片</a>
                         </li>
@@ -288,6 +288,10 @@ function songPage(){
     switchPanel('panelSong');
 }
 
+function returnEdit(){
+   switchPanel('panelEdit');
+}
+
 function editPage(){
     switchPanel('panelEdit');
 
@@ -301,7 +305,7 @@ function editPage(){
        data: {
             title: title,
             content: content
-       }
+       },
     })
     .done(function(data) {
       alert('留言完成!');
