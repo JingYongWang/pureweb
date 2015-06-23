@@ -1,7 +1,7 @@
 var koa = require('koa');
 var app = koa();
 var route = require('koa-route')
-var mount = require('koa-mount'); 
+//var mount = require('koa-mount'); 
 var logger = require('koa-logger');
 var server = require('koa-static-folder');
 var bodyParser = require("koa-bodyparser");
@@ -10,6 +10,7 @@ var co      = require('co');
 var monk    = require('monk');
 var comonk  = require('co-monk');
 var db      = monk('localhost/test'); //在預設test的資料庫裡
+var article   = comonk(db.get('article')); //放title 跟content的資料庫 
 var passwordPure   = comonk(db.get('passwordPure')); //passwordPure則是其中一個collect之一
 
 
@@ -63,6 +64,14 @@ app.use(route.post("/passwordPure", function *login() {
 	response(this.response, 404, "失敗!!!!!!!");
   }
  
+}));
+
+app.use(route.post("/editPage", function *editPage(){
+  var title = this.request.body.title;
+  var content = this.request.body.content; 
+  yield article.insert({title:title, content:content});
+  response(this.response, 200, 'write success!');
+
 }));
 
 app.use(route.post("/logout", function *logout() {
