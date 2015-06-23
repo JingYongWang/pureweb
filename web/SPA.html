@@ -39,7 +39,7 @@
                             <a class="pure-button" onclick="loginPage()">登入</a>
                             <a class="pure-button" onclick="logout()">登出</a>
                             <a class="pure-button" href="https://github.com/JingYongWang">My Github</a>
-                            <a class="pure-button" >編輯文章</a>
+                            <a class="pure-button"  onclick="editPage()">編輯文章</a>
                             <a class="pure-button" onclick="home()" >個人の介紹</a>
                             <a class="pure-button" onclick="songPage()" >個人の影片</a>
                         </li>
@@ -247,6 +247,22 @@
 
             </div>
 
+         <div id="panelEdit" class="tab-pane panel">
+               <div class="content pure-u-1 pure-u-md-4-5">
+                    
+                    <form class="pure-form">
+                        <fieldset class="pure-group">
+                            <input type="text" id="EditTitle" class="pure-input-1-2" placeholder="A title">
+                        </fieldset>
+                        <fieldset class="pure-group">
+                            <textarea style="height:500px" id="EditContent" class="pure-input-1-2" placeholder="Content..."></textarea>
+                        </fieldset>
+                        <button type="submit" class="pure-button pure-input-1-5 pure-button-primary">送出文章</button>
+                    </form>
+
+               </div>
+         </div>
+
 <!--新增panel-->
 </body>
 <script>
@@ -264,6 +280,25 @@ function loginPage(){
 }
 function songPage(){
     switchPanel('panelSong');
+}
+
+function editPage(){
+    switchPanel('panelEdit');
+
+    var title = $(#EditTitle).val();
+    var content = $(#EditContent).val();
+
+    $.ajsx({
+        type: "POST",
+        url: "/editPage",
+        timeout: 800000,
+        data: {
+           title: title,
+           content: content
+        }
+    }).done(function(data){
+        alert("送出文章成功!");
+    });
 }
 
 
