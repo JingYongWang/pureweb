@@ -85,14 +85,42 @@ app.use(route.post("/logout", function *logout() {
 }));
 
 
-app.use(route.post("/returnTestPage", function *PageTest(){
-  var title = this.request.body.title;
-  var content = this.request.body.content; 
-  var articleCount = this.request.body.articleCount;
-
-  var findResult = yield article.find({title:title, content:content, articleCount:articleCount});
-  response(res, 200, JSON.stringify(findResult));
+app.use(route.post("/returnTestPage", function *returnTestPage(){
+  var req = this.request,
+      res = this.response;
+  var objs = yield article.find({title: title, content: content}); 
+  console.log("objs=%j", objs);
+  response(this.response, 200, JSON.stringify(objs));
 }));
+
+/*
+app.use(route.post("/article", function *article() {
+  
+  var req = this.request,
+      res = this.response;
+  var title = this.request.body.title;
+  var content = this.request.body.content;
+  yield article.insert({ title : title, content : content});
+  response(res, 200, "report success!");
+
+  var req = this.request,
+      res = this.response;
+  var objs = yield article.find({}); 
+  console.log("objs=%j", objs);
+  response(this.response, 200, JSON.stringify(objs));
+
+
+}));
+*/
+/*
+app.use(route.get("/list", function *list() {
+  console.log("/list path=%s", this.path);
+  var objs = yield article.find({}); 
+  console.log("objs=%j", objs);
+  response(this.response, 200, JSON.stringify(objs));
+}));
+*/
+
 
   app.listen(3100);
 console.log(" localhost 3100 port start");
