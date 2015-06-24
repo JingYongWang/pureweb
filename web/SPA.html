@@ -38,7 +38,10 @@
                         <li class="nav-item">
                             <a class="pure-button" onclick="loginPage()">登入</a>
                             <a class="pure-button" onclick="logout()">登出</a>
+                            <a class="pure-button" onclick="returnTestPage()">測試文章</a>
+                            <!--
                             <a class="pure-button" href="https://github.com/JingYongWang">My Github</a>
+                            -->
                             <a class="pure-button"  onclick="returnEdit()">編輯文章</a>
                             <a class="pure-button" onclick="home()" >個人の介紹</a>
                             <a class="pure-button" onclick="songPage()" >個人の影片</a>
@@ -257,15 +260,23 @@
                         <fieldset class="pure-group">
                             <textarea style="height:500px" id="EditContent" class="pure-input-1-2" placeholder="Content..."></textarea>
                         </fieldset>
+                        <fieldset>
+                        <select id="state">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                        </fieldset>
                         <button type="submit" class="pure-button pure-input-1-5 pure-button-primary" onclick="editPage()">送出文章</button>
                     </form>
 
                </div>
          </div>
 
-        <div id="panelEditPageTest" class="tab-pane panel">
+        <div id="panelArticleTest" class="tab-pane panel">
              <div class="content pure-u-1 pure-u-md-4-5">
-                
              </div>
         </div>
 
@@ -276,6 +287,9 @@ function switchPanel(name) {
     $('.panel').css("display", "none");
     $('#' + name).css("display", "block");
 }
+
+var articleCount  = 0;
+
 
 function home() {
       switchPanel('panelHome');
@@ -289,7 +303,18 @@ function songPage(){
 }
 
 function returnEdit(){
-   switchPanel('panelEdit');
+   switchPanel('panelEdit'); //panelEdit頁面ID
+}
+
+function returnTestPage(){
+    switchPanel('panelArticleTest'); //panelEditPageTest頁面ID
+}
+
+function PageTest(){
+    switchPanel('panelArticleTest');
+    $('#panelArticleTest').append("<h1>Test Page1234567897897897<h1>");
+    
+//<section class="post"></select>
 }
 
 function editPage(){
@@ -297,29 +322,27 @@ function editPage(){
 
     var title = $('#EditTitle').val();
     var content = $('#EditContent').val();
-
+    var articleCount = $('#state').val();
        $.ajax({
        type: "POST",
        url: "/editPage",
        timeout: this.timeout,
        data: {
             title: title,
-            content: content
+            content: content,
+            articleCount: articleCount //BUG
        },
     })
     .done(function(data) {
       alert('留言完成!');
-      switchPanel('panelHome');
+      switchPanel('panelHome');   
     }).fail(function() {
         alert( "刪除失敗！");
         switchPanel('panelHome');
      });
-
+    articleCount = articleCount+1;
 }
 
-function panelEditPageTest(){
-    switchPanel('panelEditPageTest');
-}
 
 
 function login() {

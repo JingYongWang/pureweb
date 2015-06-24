@@ -69,7 +69,10 @@ app.use(route.post("/passwordPure", function *login() {
 app.use(route.post("/editPage", function *editPage(){
   var title = this.request.body.title;
   var content = this.request.body.content; 
-  yield article.insert({title:title, content:content});
+  var articleCount = this.request.body.articleCount;
+  yield article.insert({title:title, content:content, articleCount:articleCount} );  
+  //本來是字串  改JSON
+
   response(this.response, 200, 'write success!');
 
 }));
@@ -81,6 +84,15 @@ app.use(route.post("/logout", function *logout() {
   response(res, 200, "logout success!");
 }));
 
+
+app.use(route.post("/PageTest", function *PageTest(){
+  var title = this.request.body.title;
+  var content = this.request.body.content; 
+  var articleCount = this.request.body.articleCount;
+
+  var findResult = yield article.find({title:title, content:content, articleCount:articleCount});
+  response(res, 200, JSON.stringify(findResult));
+}));
 
   app.listen(3100);
 console.log(" localhost 3100 port start");
