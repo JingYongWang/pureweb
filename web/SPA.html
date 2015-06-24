@@ -308,8 +308,11 @@ function returnEdit(){
 
 function returnTestPage(){
     switchPanel('panelArticleTest'); //panelEditPageTest頁面ID
+    $('#panelArticleTest').append("<div class='content pure-u-1 pure-u-md-4-5'><h1>Test Page1234567897897897<h1></div>");
+    //$('#panelArticleTest').append("<h1>Test Page1234567897897897<h1>");
+    //$('#panelArticleTest').append("</div>");
 }
-
+/*
 function PageTest(){
     switchPanel('panelArticleTest');
     $('#panelArticleTest').append("<div class='content pure-u-1 pure-u-md-4-5'>");
@@ -317,6 +320,7 @@ function PageTest(){
     $('#panelArticleTest').append("</div>");
 //<section class="post"></select>
 }
+*/
 
 function editPage(){
     switchPanel('panelEdit');

@@ -85,7 +85,7 @@ app.use(route.post("/logout", function *logout() {
 }));
 
 
-app.use(route.post("/PageTest", function *PageTest(){
+app.use(route.post("/returnTestPage", function *PageTest(){
   var title = this.request.body.title;
   var content = this.request.body.content; 
   var articleCount = this.request.body.articleCount;
