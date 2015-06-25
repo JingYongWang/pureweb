@@ -306,7 +306,7 @@ function returnEdit(){
    switchPanel('panelEdit'); //panelEdit頁面ID
 }
 
-var art;
+
 var article;
 /*
 //向Server端存取db.article
@@ -345,9 +345,9 @@ function returnTestPage(){
     article = JSON.parse(data);
 
 
-    for(var i in art )
+    for(var i in article )
     {
-    $('#panelArticleTest').append("<div class='content pure-u-1 pure-u-md-4-5'><div><h1 class='content-subhead-myself'></h1></div>"+art.article[i].title+"<h1>Test Page1234567897897897</h1><section class='post'><div class='post-description'>"+art.article[i].content+"<p>Test Content</p></div></section></div>");
+    $('#panelArticleTest').append("<div class='content pure-u-1 pure-u-md-4-5'><div><h1 class='content-subhead-myself'></h1></div><h1>"+article[i].title+"</h1><section class='post'><div class='post-description'><h3>"+article[i].content+"</h3></div></section></div>");
     }
     }).fail(function() {
       alert( "失敗！" );

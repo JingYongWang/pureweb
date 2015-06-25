@@ -85,10 +85,10 @@ app.use(route.post("/logout", function *logout() {
 }));
 
 
-app.use(route.post("/returnTestPage", function *returnTestPage(){
+app.use(route.get("/returnTestPage", function *returnTestPage(){
   var req = this.request,
       res = this.response;
-  var objs = yield article.find({title: title, content: content}); 
+  var objs = yield article.find({});  
   console.log("objs=%j", objs);
   response(this.response, 200, JSON.stringify(objs));
 }));
